@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+      <div class="container">
+
+
+         <div class="panel panel-default">
+
+          <div class="panel-heading">
+
+             <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+             城市列表
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Logo</th>
+                <th>名称</th>
+                <th>人口</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+             {% for obj  in data_list %}
+              <tr>
+                <th >{{obj.id}}</th>
+                  <th >
+                      <img src="/media/{{obj.img}}" style="height:40px;">
+                  </th>
+                 <th >{{obj.name}}</th>
+                <td>{{obj.count}}</td>
+                <td>
+                    <a class="btn btn-primary btn-xs" href="#">编辑</a>
+                    <a class="btn btn-danger btn-xs" href="#">删除</a>
+                </td>
+
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+         <ul class="pagination">
+
+             {{page_string}}
+         </ul>
+
+
+
+
+      </div>
+{% endblock %}

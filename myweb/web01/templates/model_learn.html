@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{n1}}</h1>
+<h1>{{n2}}</h1>
+<h2>{{n2.0}}</h2>
+<h2>{{n2.1}}</h2>
+<h2>{{n2.2}}</h2>
+<div>
+    {% for item in n2 %}
+       <span>{{item}}</span>
+    {% endfor %}
+
+</div>
+<hr/>
+<h1>{{n3}}</h1>
+<h2>{{n3.name}}</h2>
+<h2>{{n3.salary}}</h2>
+<h2>{{n3.role}}</h2>
+
+<ul>
+    {% for k,v in n3.items %}
+    <li>{{k}} ={{v}}</li>
+    {% endfor %}
+</ul>
+<hr/>
+<h4>{{n4.0}}</h4>
+<h4>{{n4.0.name}}</h4>
+
+<div>
+    {% for item in n4 %}
+    <ul>
+        <li>{{item.name}}</li>
+        <li>{{item.salary}}</li>
+    </ul>
+
+    {% endfor %}
+</div>
+
+{%if n1 == "你好"%}
+  <h1>dududu</h1>
+{% else %}
+  <h2>2222</h2>
+{% endif %}
+</body>
+</html>

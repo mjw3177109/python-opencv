@@ -1,0 +1,20 @@
+  $insertres = DB::table('neworderlist')->insert([
+                [
+                    'user_id' =>$userid,
+                    'user_person'=> $orderUserName,
+                    'user_address' => $orderUserAddress,
+                    'order_price' =>$orderprice,
+                    'start_time' =>$ordertime,
+                    'end_time' =>$orderProductTime,
+                    'order_id'=>$orderid,
+                    'order_type'=>$orderService,
+                    'order_status'=>$orderstatus,
+                    'order_info'=>$orderinfo,
+                ],]);
+
+        return $userid;
+
+
+
+     $users = DB::select('select * from neworderlist where user_id = ?', [$content]);
+        return $users;

@@ -1,0 +1,48 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+      <div class="container">
+
+         <div class="panel panel-default">
+
+          <div class="panel-heading">
+
+             <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+             种类列表
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                    <th>ID</th>
+                    <th>cateId</th>
+                    <th>cateName</th>
+                    <th>cateEName</th>
+                    <th>cateUrl</th>
+                    <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+             {% for obj  in data_list %}
+              <tr>
+                  <th >{{obj.id}}</th>
+                  <td>{{obj.cateId}}</td>
+                  <th >{{obj.cateName}}</th>
+                  <td>{{obj.cateEName}}</td>
+                  <td>{{obj.cateUrl}}</td>
+                <td>
+                    <a class="btn btn-primary btn-xs" href="#">编辑</a>
+                    <a class="btn btn-danger btn-xs" href="#">删除</a>
+                </td>
+
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+{% endblock %}

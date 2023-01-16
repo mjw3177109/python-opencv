@@ -1,0 +1,59 @@
+{% extends 'home.html' %}
+
+{%  block css %}
+<style>
+
+    /*去除a标签下划线*/
+a {
+	text-decoration: none;
+}
+/*去除未被访问的a标签的下划线*/
+a:link {
+	text-decoration: none;
+}
+/*去除已经被访问过的a标签的下划线*/
+a:visited {
+	text-decoration: none;
+}
+/*去除鼠标悬停时的a标签的下划线*/
+a:hover {
+	text-decoration: none;
+}
+/*去除正在点击的a标签的下划线（鼠标按下，尚未松开）*/
+a:active {
+	text-decoration: none;
+}
+/*去除获得焦点的a标签的下划线（被鼠标点击过）*/
+a:focus {
+	text-decoration: none;
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+      <div class="container">
+          <div class="row">
+              {%  for obj  in data_list %}
+              <div class="col-xs-6 col-lg-4" >
+                  <a  href="/second/{{obj.examCateId}}/list/?questionName={{obj.examCateName}}" style="color:black">
+                  <div  btnid="{{obj.examCateId}}"  style="border:1px solid #ccc;text-align:center;margin:5px">
+                       <img src="{{obj.examUrl}}">
+                    <h3>{{obj.examCateName}}</h3>
+                  </div>
+                  </a>
+              </div>
+              {% endfor %}
+
+
+
+
+
+         </div>
+
+
+
+
+      </div>
+{% endblock %}
