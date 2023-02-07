@@ -1,0 +1,10 @@
+.nav {
+    min-width: 980px;
+    height: 64px;
+    background-color: #2F72AB;
+    color: #ffffff;
+    line-height: 64px;
+    overflow: visible;
+    font-size: 12px;
+}
+
