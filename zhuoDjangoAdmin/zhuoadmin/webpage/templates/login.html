@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卓勤后台系统</title>
+<!--    <link rel="shortcut icon" href="{% static 'imgs/luffy-study-logo.png' %} ">-->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %} "/>
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %} "/>
+    <link rel="stylesheet" href="{% static 'css/commons.css' %} "/>
+<!--    <link rel="stylesheet" href="{% static 'css/nav.css' %} "/>-->
+    <style>
+       *{
+         margin: 0;
+          padding:0;
+       }
+       body{
+
+       }
+
+       .navbar-header{
+       width:570px;
+       height:64px;
+       padding-left:20px;
+        float:left;
+
+
+       overflow: visible;
+
+       }
+       .navbar-header .logo{
+         height:52px;
+         width:52px;
+         line-height:52px;
+         float:left;
+         margin-top:5px;
+
+       }
+       .navbar-header .TextName{
+        width:480px;
+
+        height:64px;
+
+        float:left;
+        margin-left:5px;
+
+       }
+       .navbar-header .TextName .topTitle{
+          height:48px;
+          font-size:24px;
+          line-height:51px;
+
+       }
+       .navbar-header .TextName .bottomTitle{
+          height:16px;
+          padding-left:18px;
+          font-size:12px;
+          margin-top:-5px;
+
+       }
+
+       .pg-bottom{
+         width:100%;
+         height:64px;
+         line-height:64px;
+         text-align:center;
+         background:#FFFFFF;
+         color:rgba(0, 0, 0, 0.4);
+       }
+
+       .account{
+
+         width:410px;
+         height:323px;
+         margin-left:auto;
+         margin-right: auto;
+         margin-top:160px;
+         padding:20px 40px;
+         position:relative;
+         background: rgba(255, 255, 255, 0.2);
+         backdrop-filter: blur(5px);
+         border-radius: 10px;
+
+
+       }
+       .btn:hover,.btn:focus{
+        border:none;
+        background:none;
+        box-shadow:none;
+       }
+    </style>
+</head>
+<body background="{% static 'imgs/background.png' %}">
+<div class="pg-header" style="height:64px">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background: rgba(255, 255, 255, 1);min-width:980px">
+      <div class="navbar-header" style="color:#000000;">
+
+          <img class="logo" src="{% static 'imgs/zhuo.png' %}">
+          <div class="TextName">
+             <div class="topTitle">
+                 深圳市卓勤新技术发展有限公司
+             </div>
+              <div class="bottomTitle">
+
+                  ShenZhen ChueKan New Technology Developments Co,.Ltd
+              </div>
+          </div>
+      </div>
+</nav>
+</div>
+
+<div class="pg-body" style="width:100%;min-height:800px; overflow:hidden;">
+
+    <div class="account">
+
+        <div style="color:#fff;font-size:16px;"><span style="border-bottom:2px solid rgba(161, 210, 255, 1); padding-bottom:5px;">账户密码登录</span></div>
+
+
+
+        <form method="post" style="margin-top:20px">
+          {% csrf_token %}
+           <div class="form-group" style="margin-top:25px;" >
+                <input type="username" class="form-control" id="username" placeholder="用户名" style="height:40px;">
+           </div>
+
+
+            <div class="form-group" style="margin-top:25px;">
+                <input type="password" class="form-control" id="password" placeholder="密码" style="height:40px;">
+           </div>
+
+            <div class="form-group" style="margin-top:40px;">
+                 <button type="submit" value="登录" class="btn" style="width:100%;text-align:center;background: #57BC9A;border:none;color:rgba(255, 255, 255, 1);height:40px">登录</button>
+            </div>
+
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+<div class="pg-bottom">Copyright @ 2005-2021 ChueKan. All Rights Reserved</div>
+
+
+
+
+
+
+
+
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %} "></script>
+
+<script src="{% static 'plugins/bootstrap/js/bootstrap.js' %} "></script>
+{% block js %} {% endblock %}
+</body>
+</html>
