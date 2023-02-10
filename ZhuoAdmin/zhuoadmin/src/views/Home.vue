@@ -31,35 +31,88 @@
                   </div>
 
                 </el-submenu>
-
-<!--                <el-submenu index="1" style="text-align: left;line-height: 45px;color:#fff">-->
-<!--                  <template slot="title">-->
-<!--                    <span style="color:#fff">业务管理</span>-->
-<!--                  </template>-->
-<!--                  <el-menu-item-group>-->
-<!--                    <el-menu-item index="1-2">选项2</el-menu-item>-->
-<!--                  </el-menu-item-group>-->
-<!--                  <el-menu-item-group>-->
-<!--                    <el-menu-item index="1-3">选项3</el-menu-item>-->
-<!--                  </el-menu-item-group>-->
-<!--                </el-submenu>-->
               </el-menu>
-
-
-
-
-
-
-
             </el-aside>
             <el-main  class="menu-right" style=" min-width:1156px;">
 
+              <div class="contentTable" style="width:100%;height:100%;background: rgba(255, 255, 255, 1);border-radius: 5px;padding-left:10px;">
+
+                <el-table
+                    :data="tableData"
+                    style="width: 100%;border-radius: 5px;font-size: 12px">
+                  <el-table-column
+                      prop="id"
+                      label="序号"
+                      width="100">
+                  </el-table-column>
+                  <el-table-column
+                      prop="orders"
+                      label="订单号"
+                      width="150">
+                  </el-table-column>
+
+                  <el-table-column
+                      prop="state"
+                      label="订单状态"
+                      width="130">
+                  </el-table-column>
+
+                  <el-table-column
+                      prop="price"
+                      label="订单金额"
+                      width="100">
+                  </el-table-column>
+
+                  <el-table-column
+                      prop="user"
+                      label="购买用户"
+                      width="130">
+                  </el-table-column>
+
+                  <el-table-column
+                      prop="product"
+                      label="购买产品"
+                      width="130">
+
+                  </el-table-column>
+
+                  <el-table-column
+                      prop="create_time"
+                      label="创建时间"
+                      width="130">
+
+                  </el-table-column>
+
+                  <el-table-column
+                      prop="update_time"
+                      label="更新时间"
+                      width="130">
+
+                  </el-table-column>
+
+                  <el-table-column
+
+                      label="操作"
+                      >
+                    <template slot-scope="scope">
+                      <el-button @click="handleClick(scope.row)" type="text" size="small" style="color:rgba(87, 188, 154, 1)">管理</el-button>
+                      <el-button type="text" size="small" style="color:rgba(87, 188, 154, 1)">删除</el-button>
+                    </template>
+                  </el-table-column>
 
 
+
+
+                </el-table>
+
+
+              </div>
 
 
             </el-main>
           </el-container>
+
+          <div class="pg-bottom">Copyright @ 2005-2021 ChueKan. All Rights Reserved</div>
     </el-container>
 
 
@@ -81,6 +134,46 @@ import Header from "@/components/Header";
 
         isCollapse: true,
         opens:1,
+        tableData: [{
+          id: '1',
+          orders: 'CK20230206000001',
+          state: '待支付',
+          price:996.3,
+          user:"何山河",
+          product:"供灯",
+          create_time:"2022/11/04 23:40",
+          update_time:"2022/09/07 15:16",
+
+        }, {
+          id: '2',
+          orders: 'CK20230206000002',
+          state: '待支付',
+          price:996.3,
+          user:"何山河",
+          product:"供灯",
+          create_time:"2022/11/04 23:40",
+          update_time:"2022/09/07 15:16",
+        }, {
+          id: '3',
+          orders: 'CK20230206000003',
+          state: '待支付',
+          price:996.3,
+          user:"何山河",
+          product:"供灯",
+          create_time:"2022/11/04 23:40",
+          update_time:"2022/09/07 15:16",
+        }, {
+          id: '4',
+          orders: 'CK20230206000004',
+          state: '待支付',
+          price:996.3,
+          user:"何山河",
+          product:"供灯",
+          create_time:"2022/11/04 23:40",
+          update_time:"2022/09/07 15:16",
+        }],
+
+
       }
     },
     created() {
@@ -90,6 +183,9 @@ import Header from "@/components/Header";
 
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
+      },
+      handleClick(row) {
+        console.log(row);
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
@@ -172,5 +268,14 @@ import Header from "@/components/Header";
     .el-menu .el-submenu .el-menu .el-menu-item:hover {
 
       background:none;
+    }
+    .pg-bottom{
+      width:100%;
+      height:64px;
+      line-height:64px;
+      text-align:center;
+      background:#FFFFFF;
+      color:rgba(0, 0, 0, 0.4);
+
     }
 </style>

@@ -120,17 +120,18 @@
         <form method="post" style="margin-top:20px">
           {% csrf_token %}
            <div class="form-group" style="margin-top:25px;" >
-                <input type="username" class="form-control" id="username" placeholder="用户名" style="height:40px;">
+                <input type="text" class="form-control" name="userid" placeholder="用户名" style="height:40px;">
            </div>
 
 
             <div class="form-group" style="margin-top:25px;">
-                <input type="password" class="form-control" id="password" placeholder="密码" style="height:40px;">
+                <input type="password" class="form-control" name="password" placeholder="密码" style="height:40px;">
            </div>
 
             <div class="form-group" style="margin-top:40px;">
                  <button type="submit" value="登录" class="btn" style="width:100%;text-align:center;background: #57BC9A;border:none;color:rgba(255, 255, 255, 1);height:40px">登录</button>
             </div>
+            <div>  <span style="color:red;"> {{error_msg}}</span></div>
 
 
 

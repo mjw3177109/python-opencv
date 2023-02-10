@@ -142,48 +142,93 @@
         # new_word =words[:number]
         # print(len(new_word))
 
-import sys
-import re
-for line in sys.stdin:
-    finall_number=0
-    result_left = ""
-    result_right = ""
-    new_words = line.strip()
-    result_mid = new_words[0]
-    copy_words =new_words
-    res_number =0
-    # new_words = new_words[1:]
-    # number_list=re.findall("{",new_words)
-    while True:
-        if "," in copy_words:
-            finall_number =copy_words.index(",")
-            res_number+=finall_number
-            copy_words=copy_words[finall_number+1:]
-        else:
-            break
+# import sys
+# import re
+# for line in sys.stdin:
+#     finall_number=0
+#     result_left = ""
+#     result_right = ""
+#     new_words = line.strip()
+#     result_mid = new_words[0]
+#     copy_words =new_words
+#     res_number =0
+#     # new_words = new_words[1:]
+#     # number_list=re.findall("{",new_words)
+#     while True:
+#         if "," in copy_words:
+#             finall_number =copy_words.index(",")
+#             res_number+=finall_number
+#             copy_words=copy_words[finall_number+1:]
+#         else:
+#             break
+#
+#
+#
+#     left_part =new_words[1:res_number]
+#     right_part =new_words[res_number+1:]
+#
+#     for k in left_part:
+#         if k =="{" or k=="}" or k ==",":
+#             pass
+#         else:
+#             result_left=k+result_left
+#
+#     for m in right_part:
+#         if m =="{" or m=="}" or m ==",":
+#             pass
+#         else:
+#             result_right=m+result_right
+#     print(result_left+result_mid+result_right)
+
+
+# dict2={3:5}
+# dict4={(1,2,3):"uestc"}
 
 
 
-    left_part =new_words[1:res_number]
-    right_part =new_words[res_number+1:]
-
-    for k in left_part:
-        if k =="{" or k=="}" or k ==",":
-            pass
-        else:
-            result_left=k+result_left
-
-    for m in right_part:
-        if m =="{" or m=="}" or m ==",":
-            pass
-        else:
-            result_right=m+result_right
-    print(result_left+result_mid+result_right)
 
 
 
+kvps={'1':1,'2':2}
+theCopy =kvps.copy()
+kvps['1']=5
+sum = kvps['1']+theCopy['1']
+print(sum)
+
+print(id(kvps))
+print(id(theCopy))
 
 
+kvps={1:1,2:2}
+
+theCopy =kvps.copy()
+kvps[1]=5
+sum = kvps[1]+theCopy[1]
+print(sum)
+
+print(id(kvps))
+print(id(theCopy))
+
+
+
+import copy
+a = [1,2,3,[4,5],1]
+b = a
+c = a.copy()
+d = copy.deepcopy(a)
+
+a.append(9)
+a[3].append(6)
+
+print(a) 	#[1, 2, 3, [4, 5, 6], 1, 9]
+print(b)	#[1, 2, 3, [4, 5, 6], 1, 9]
+print(c)	#[1, 2, 3, [4, 5, 6], 1]
+print(d)	#[1, 2, 3, [4, 5], 1]
+
+xa={"12":3,"4":4}
+xb =xa.copy()
+xa["12"]=1
+print(xb,xa)
 
 
 
