@@ -1,6 +1,7 @@
 <template>
   <div :style="{backgroundImage:'url('+require('../assets/background.png')+')'}">
     <el-container style="min-height:100vh;min-width:100vw;" >
+
       <el-header style="width:100%;height:64px;background: rgba(255, 255, 255, 1);padding:0">
         <div style="width: 100%;height:100%">
           <div class="left_header">
@@ -74,7 +75,11 @@ name: "Login",
   },
   methods:{
     login(){
-
+      this.request.get("/newlogin/?username="+this.user.username).then(res=>{
+        if(res.status=="200"){
+          console.log(res.data)
+        }
+      })
     }
   },
 }

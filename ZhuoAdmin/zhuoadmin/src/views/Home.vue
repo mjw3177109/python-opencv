@@ -9,12 +9,14 @@
             <el-aside class="menu-left" style=" width: 220px;background: rgba(255, 255, 255, 0.2);">
 
               <el-menu
-                  default-active="1-2"
+                  :default-openeds="['1','2']"
                   :collapse="isCollapse"
                   default-act="opens"
                   class="el-menu-vertical-demo"
+                  router
                   @open="handleOpen"
                   @close="handleClose"
+
                   style=" width:200px; margin-top:20px;border-radius:5px;margin-left: 10px;background:none;height: 300px;border: none"
               >
 
@@ -25,9 +27,14 @@
                   </template>
                   <div style=" background: #57BC9A;border-radius:5px;width: 100%;height: 45px;">
 
-                    <el-menu-item index="1-2" style="font-size: 16px;margin-left: -30px">
+                    <el-menu-item index="/Orders"  style="font-size: 16px;margin-left: -30px">
 
-                      <img src="../assets/rightarrow.png" style="width: 15px;height: 15px;margin-top: -3px; margin-right: 5px"></img>订单管理</el-menu-item>
+                        <img src="../assets/rightarrow.png" style="width: 15px;height: 15px;margin-top: -3px; margin-right: 5px"></img>订单管理
+
+                    </el-menu-item>
+
+
+
                   </div>
 
                 </el-submenu>
@@ -36,74 +43,75 @@
             <el-main  class="menu-right" style=" min-width:1156px;">
 
               <div class="contentTable" style="width:100%;height:100%;background: rgba(255, 255, 255, 1);border-radius: 5px;padding-left:10px;">
+                <router-view/>
 
-                <el-table
-                    :data="tableData"
-                    style="width: 100%;border-radius: 5px;font-size: 12px">
-                  <el-table-column
-                      prop="id"
-                      label="序号"
-                      width="100">
-                  </el-table-column>
-                  <el-table-column
-                      prop="orders"
-                      label="订单号"
-                      width="150">
-                  </el-table-column>
+<!--                <el-table-->
+<!--                    :data="tableData"-->
+<!--                    style="width: 100%;border-radius: 5px;font-size: 12px">-->
+<!--                  <el-table-column-->
+<!--                      prop="id"-->
+<!--                      label="序号"-->
+<!--                      width="100">-->
+<!--                  </el-table-column>-->
+<!--                  <el-table-column-->
+<!--                      prop="orders"-->
+<!--                      label="订单号"-->
+<!--                      width="150">-->
+<!--                  </el-table-column>-->
 
-                  <el-table-column
-                      prop="state"
-                      label="订单状态"
-                      width="130">
-                  </el-table-column>
+<!--                  <el-table-column-->
+<!--                      prop="state"-->
+<!--                      label="订单状态"-->
+<!--                      width="130">-->
+<!--                  </el-table-column>-->
 
-                  <el-table-column
-                      prop="price"
-                      label="订单金额"
-                      width="100">
-                  </el-table-column>
+<!--                  <el-table-column-->
+<!--                      prop="price"-->
+<!--                      label="订单金额"-->
+<!--                      width="100">-->
+<!--                  </el-table-column>-->
 
-                  <el-table-column
-                      prop="user"
-                      label="购买用户"
-                      width="130">
-                  </el-table-column>
+<!--                  <el-table-column-->
+<!--                      prop="user"-->
+<!--                      label="购买用户"-->
+<!--                      width="130">-->
+<!--                  </el-table-column>-->
 
-                  <el-table-column
-                      prop="product"
-                      label="购买产品"
-                      width="130">
+<!--                  <el-table-column-->
+<!--                      prop="product"-->
+<!--                      label="购买产品"-->
+<!--                      width="130">-->
 
-                  </el-table-column>
+<!--                  </el-table-column>-->
 
-                  <el-table-column
-                      prop="create_time"
-                      label="创建时间"
-                      width="130">
+<!--                  <el-table-column-->
+<!--                      prop="create_time"-->
+<!--                      label="创建时间"-->
+<!--                      width="130">-->
 
-                  </el-table-column>
+<!--                  </el-table-column>-->
 
-                  <el-table-column
-                      prop="update_time"
-                      label="更新时间"
-                      width="130">
+<!--                  <el-table-column-->
+<!--                      prop="update_time"-->
+<!--                      label="更新时间"-->
+<!--                      width="130">-->
 
-                  </el-table-column>
+<!--                  </el-table-column>-->
 
-                  <el-table-column
+<!--                  <el-table-column-->
 
-                      label="操作"
-                      >
-                    <template slot-scope="scope">
-                      <el-button @click="handleClick(scope.row)" type="text" size="small" style="color:rgba(87, 188, 154, 1)">管理</el-button>
-                      <el-button type="text" size="small" style="color:rgba(87, 188, 154, 1)">删除</el-button>
-                    </template>
-                  </el-table-column>
-
-
+<!--                      label="操作"-->
+<!--                      >-->
+<!--                    <template slot-scope="scope">-->
+<!--                      <el-button @click="handleClick(scope.row)" type="text" size="small" style="color:rgba(87, 188, 154, 1)">管理</el-button>-->
+<!--                      <el-button type="text" size="small" style="color:rgba(87, 188, 154, 1)">删除</el-button>-->
+<!--                    </template>-->
+<!--                  </el-table-column>-->
 
 
-                </el-table>
+
+
+<!--                </el-table>-->
 
 
               </div>
