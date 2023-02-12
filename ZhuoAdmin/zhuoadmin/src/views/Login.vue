@@ -24,17 +24,19 @@
 
              <el-form :model="user" ref="userForm" style="margin-top: 20px;">
                <el-form-item prop="username" style="margin-top: 25px">
-                 <el-input size="medium"    v-model="user.username" style="height:40px;" placeholder="用户名"></el-input>
+                 <el-input size="medium"    v-model="user.userid" style="height:40px;" placeholder="用户名"></el-input>
                </el-form-item>
 
                <el-form-item  prop="password" style="margin-top: 25px" >
-                 <el-input size="medium"  show=password v-model="user.password" style="height:40px;" placeholder="密码"></el-input>
+                 <el-input size="medium"  type="password" v-model="user.password" style="height:40px;" placeholder="密码"></el-input>
                </el-form-item>
 
                <el-form-item style="margin-top:40px;text-align: right">
                  <el-button type="primary" size="small" onautocomplete="off" @click="login" style="width: 100%;background: #57BC9A;
 border-radius: 2px;color:rgba(255, 255, 255, 1);height:40px;text-align: center;font-size: 16px">登录</el-button>
                </el-form-item>
+
+               <span style="color:red">{{error_msg}}</span>
 
              </el-form>
 
@@ -66,6 +68,7 @@ name: "Login",
   return{
     bg2: '../assets/background.png',
     user:{},
+    error_msg:"",
 
     rules:{
 
@@ -75,9 +78,21 @@ name: "Login",
   },
   methods:{
     login(){
-      this.request.get("/newlogin/?username="+this.user.username).then(res=>{
-        if(res.status=="200"){
+      this.request.post("/newlogin/",this.user).then(res=>{
+
+        if(res.status=="200" && res.error_msg===""){
           console.log(res.data)
+
+          this.$router.push("/")
+          localStorage.setItem("user",JSON.stringify(res.data)) //保存用户信息
+          this.$message.success("登录成功")
+          console.log(res.data)
+
+
+        }else{
+
+
+          this.$message.error(res.error_msg);
         }
       })
     }

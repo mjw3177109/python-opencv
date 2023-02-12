@@ -37,7 +37,9 @@ export default {
     },
   methods:{
     logout(){
-
+      this.$router.push("/login/")
+      localStorage.removeItem("user")
+      this.$message.success("退出成功");
     },
   }
   }

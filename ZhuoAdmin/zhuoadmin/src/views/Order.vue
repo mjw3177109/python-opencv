@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-table
-        :data="tableData"
+        :data="tableDatas"
         style="width: 100%;border-radius: 5px;font-size: 12px">
       <el-table-column
           prop="id"
@@ -9,38 +9,38 @@
           width="100">
       </el-table-column>
       <el-table-column
-          prop="orders"
+          prop="Orders"
           label="订单号"
           width="150">
       </el-table-column>
 
       <el-table-column
-          prop="state"
+          prop="State"
           label="订单状态"
           width="130">
       </el-table-column>
 
       <el-table-column
-          prop="price"
+          prop="Money"
           label="订单金额"
           width="100">
       </el-table-column>
 
       <el-table-column
-          prop="user"
+          prop="Name"
           label="购买用户"
           width="130">
       </el-table-column>
 
       <el-table-column
-          prop="product"
+          prop="Business"
           label="购买产品"
           width="130">
 
       </el-table-column>
 
       <el-table-column
-          prop="create_time"
+          prop="Start_time"
           label="创建时间"
           width="130">
 
@@ -78,6 +78,8 @@ export default {
 name: "Order",
   data(){
   return{
+    tableDatas:[],
+
     tableData: [{
       id: '1',
       orders: 'CK20230206000001',
@@ -118,9 +120,40 @@ name: "Order",
     }],
   }
   },
+  created() {
+
+    this.getData()
+
+  },
   methods:{
     handleClick(row) {
       console.log(row);
+    },
+
+    getData(){
+      let user =localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")):{};
+
+      if (user){
+        var tokens = user.token
+
+      }else{
+        tokens =""
+      }
+
+      this.request.get("/neworders/?token="+tokens).then(res=>{
+
+        if (res.status ===200){
+          this.tableDatas=res.data
+          console.log(this.tableDatas)
+
+
+        }else if(res.status === 987){
+          this.$message.error("未登录或登录过期,请返回登录页面");
+
+        }
+
+      })
+
     },
   }
 }
