@@ -1,0 +1,16 @@
+#基于的基础镜像
+FROM python:3.9
+#代码添加到code文件夹
+
+RUN mkdir /zhuoadmin
+WORKDIR /zhuoadmin
+ADD requirements.txt /zhuoadmin/
+
+# 安装支持
+#RUN pip3 install -i https://pypi.doubanio.com/simple/ -r requirements.txt
+ADD . /zhuoadmin/
+
+Run pip3 install -i https://pypi.doubanio.com/simple/ -r requirements.txt
+
+CMD ["python3", "/zhuoadmin/prod.py"]
+

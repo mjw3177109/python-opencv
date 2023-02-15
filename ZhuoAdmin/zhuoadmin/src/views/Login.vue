@@ -1,5 +1,5 @@
 <template>
-  <div :style="{backgroundImage:'url('+require('../assets/background.png')+')'}">
+  <div :style="{backgroundImage:'url('+require('../assets/background.png')+')'}" style="background-repeat:no-repeat; background-size: 100% 100%;">
     <el-container style="min-height:100vh;min-width:100vw;" >
 
       <el-header style="width:100%;height:64px;background: rgba(255, 255, 255, 1);padding:0">
