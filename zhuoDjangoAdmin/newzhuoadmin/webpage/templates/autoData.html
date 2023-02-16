@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-
     <title>卓勤后台系统</title>
 <!--    <link rel="shortcut icon" href="{% static 'imgs/luffy-study-logo.png' %} ">-->
     <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %} "/>
@@ -12,111 +10,34 @@
 <!--    <link rel="stylesheet" href="{% static 'css/nav.css' %} "/>-->
     <style>
        *{
-          margin: 0;
+         margin: 0;
           padding:0;
        }
+       body{
 
-       html{font-size:62.5%;}
-       body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem; position:relative}
-       .pg-header{
-         height:64px;
-         width:100%;
-         background:yellow;
+       position:relative;
        }
-       .pg-body{
-        width:100%;
-        display: flex;
-        height: calc(100% - 128px);
-        background-color: red;
-        overflow-y:auto;
-    }
-    .pg-body .menu-left{
-      flex: 0 0 auto;
-      height: 100%;
-      background-color: yellow;
-      overflow-x: hidden;
-      overflow-y:auto;
-      padding:10px;
 
 
-<!--       width: 220px;-->
-<!--       border: 1px solid #EAEDF1;-->
-<!--       height:700px;-->
-
-
-<!--       padding-top:20px;-->
-<!--      float: left;-->
-<!--      margin-left:20px;-->
-<!--      margin-top:20px;-->
-    }
-    .pg-body .menu-left .newleft{
-      width:100%;
-      height:100%;
-      background:purple;
-      border-radius: 10px;
-      border: 1px solid #EAEDF1;
-<!--      background: rgba(255, 255, 255, 0.2);-->
-      backdrop-filter: blur(5px);
-
-    }
-
-    .pg-body .menu-right{
-     flex: 1 1 auto;
-     height: 100%;
-     background-color: blue;
-     overflow-x: hidden;
-     overflow-y:auto;
-     padding:10px;
-
-<!--     height:700px;-->
-<!--     margin-left:20px;-->
-<!--     margin-top:20px;-->
-<!--     margin-right:10px;-->
-<!--     background:black;-->
-<!--     float: right;-->
-
-
-    }
-   .pg-body .menu-right  .newright{
-     width:100%;
-     height: 100%;
-     background:black;
-
-     border-radius: 10px;
-     backdrop-filter: blur(5px);
-
-    }
-
-    .pg-bottom{
-        width:100%;
-         height:64px;
-         line-height:64px;
-         text-align:center;
-         background:#FFFFFF;
-         color:rgba(0, 0, 0, 0.4);
-         position:absolute;
-         left:0;
-         bottom:0px;
-    }
-   .pg-header .navbar .navbar-header{
+       .navbar-header{
        width:570px;
        height:64px;
        padding-left:20px;
-       float:left;
+        float:left;
 
 
        overflow: visible;
 
        }
-   .pg-header .navbar .navbar-header .logo{
+       .navbar-header .logo{
          height:52px;
          width:52px;
          line-height:52px;
          float:left;
          margin-top:5px;
 
-   }
-   .pg-header .navbar .navbar-header .TextName{
+       }
+       .navbar-header .TextName{
         width:480px;
 
         height:64px;
@@ -125,46 +46,51 @@
         margin-left:5px;
 
        }
-
-    .pg-header .navbar .navbar-header  .TextName .topTitle{
+       .navbar-header .TextName .topTitle{
           height:48px;
           font-size:24px;
           line-height:51px;
 
        }
-    .pg-header .navbar .navbar-header  .TextName .bottomTitle{
+       .navbar-header .TextName .bottomTitle{
           height:16px;
           padding-left:18px;
           font-size:12px;
           margin-top:-5px;
 
-   }
-   .right-menu{
-        min-width:120px;
-        height:48px;
-        float:right;
-        margin-top:8px;
+       }
 
+        .right-menu{
+          min-width:120px;
+          height:48px;
 
+          float:right;
+          margin-top:8px;
 
-   }
-    .right-menu .user-info{
-            padding: 0 30px 0 10px;
+       }
+       .right-menu .user-info{
+          padding: 0 30px 0 10px;
             height: 48px;
             position: relative;
-   }
 
-    .right-menu .user-info .avatar {
+
+       }
+
+       .right-menu .user-info:hover .avatar {
+            background-color: #fff;
+        }
+
+        .right-menu .user-info .avatar {
             display: inline-block;
             padding: 0 10px;
             height: 48px;
             line-height:48px;
         }
 
-    .right-menu .user-info .avatar img {
-            margin-top: 2px;
-    }
-    .right-menu .user-info .more-info {
+        .right-menu .user-info .avatar img {
+            /* margin-top: 2px;*/
+        }
+        .right-menu .user-info .more-info {
             display: none;
             position: absolute;
             top: 48px;
@@ -175,13 +101,13 @@
             background-color: #fff;
             color: #333;
             z-index: 1002;
-    }
+        }
 
-    .right-menu .user-info:hover .more-info {
+        .right-menu .user-info:hover .more-info {
             display: block;
-    }
+        }
 
-    .right-menu .user-info .more-info .more-item {
+        .right-menu .user-info .more-info .more-item {
             display: block;
             min-width: 60px;
             padding: 0 15px;
@@ -189,127 +115,133 @@
             text-decoration: none;
             color: #000000;
 
-    }
+        }
 
-    .right-menu .user-info .more-info .more-item:hover {
+        .right-menu .user-info .more-info .more-item:hover {
             background-color: #f1f0f0;
-    }
-
-
-
-
-
-
-
-    /*媒体查询：注意and后面空格的添加*/
-    /*iphone: w < 768px*/
-    @media screen and (max-width: 768px){
-        .pg-body{
-            width:100%;
-            background-color: green;
-        }
-        .pg-body .menu-right{
-
-
-       }
-       .pg-body .menu-left{
-         width:130px;
-       }
-
-
-        .pg-header .navbar .navbar-header{
-           width:70%;
-           height:64px;
-           padding-left:20px;
-           float:left;
-           overflow: visible;
-        }
-        .pg-header .navbar .navbar-header .TextName{
-           width:77%;
-           height:64px;
-            float:left;
-            margin-left:5px;
-            font-size:14px;
-
-        }
-        .pg-header .navbar .navbar-header  .TextName .topTitle{
-          height:48px;
-          font-size:16px;
-          line-height:48px;
-
-       }
-        .pg-header .navbar .navbar-header  .TextName .bottomTitle{
-              height:16px;
-
-              font-size:8px;
-              margin-top:-5px;
-
-       }
-
-
-
-    }
-    /*pad: w >= 768  && w< 992*/
-    @media screen and (max-width: 992px) and (min-width: 768px) {
-        .pg-body{
-            width:100%;
-            background-color: blue;
-        }
-         .pg-body .menu-left{
-           width: 220px;
-
-        }
-
-        .pg-body .menu-right{
-
-       }
-    }
-    /*中等屏幕   w >= 992  && w<1200*/
-    @media screen and (max-width: 1200px) and (min-width: 992px) {
-        .pg-body{
-            width:100%;
-
-            background-color: pink;
-
         }
 
         .pg-body .menu-left{
-           width: 220px;
+             width: 220px;
+             border: 1px solid #EAEDF1;
+             min-height:700px;
+             overflow: auto;
+             border-radius: 10px;
+             background: rgba(255, 255, 255, 0.2);
+             backdrop-filter: blur(5px);
+             padding-top:20px;
+             float:left
 
         }
+         .pg-body .menu-left .menuul{
+           width:100%;
+           height:500px;
+
+
+
+
+        }
+        .defaulta{
+              text-decoration: none;
+              color: rgba(255, 255, 255, 1);
+              margin-left:30px;
+              height:40px;
+              line-height:40px;
+              width:200px;
+
+
+
+
+        }
+        .defaulta:hover,.defaulta:focus{
+              text-decoration: none;
+              color: rgba(255, 255, 255, 1);
+              margin-left:30px;
+              height:40px;
+              line-height:40px;
+
+
+        }
+
+         .pg-body .menu-left .menuul .menuStyle{
+
+            width:100%;
+            min-height:40px;
+            overflow:auto;
+            background:none;
+            padding-left:7px;
+            border:none;
+            box-shadow: none;
+
+        }
+        .pg-body .menu-left .menuul .menuStyle .newlistyle{
+          width:203px;
+          height:36px;
+          background: #57BC9A;
+          border-radius:5px;
+
+        }
+
+         .pg-body .menu-left .menuul .menuStyle .newlistyle .newtree{
+          width:100%;
+          height:100%;
+
+          border-radius:5px;
+          padding-left:10px;
+             line-height:36px;
+
+        }
+
+         .pg-body .menu-left .menuul .menuStyle .newlistyle .newtree .newimg{
+          width:14px;
+          height:14px;
+          margin-right:5px;
+          margin-top:-3px;
+
+        }
+       .pg-body .menu-left .menuul .menuStyle .newlistyle .newtree  .newitem{
+             text-decoration: none;
+              color: #ffffff;
+              font-size:14px;
+        }
+         .newitem:hover,.newitem:focus{
+          text-decoration: none;
+              color: #ffffff;
+         }
 
         .pg-body .menu-right{
+          width:1156px;
+
+          background:rgba(255, 255, 255, 0.2);
+          margin-left:20px;
+          padding:20px;
+          float:left;
+          overflow:auto;
+          min-height:700px;
+          border-radius:10px;
+          border: 1px solid #EAEDF1;
+        }
+        .pg-bottom{
+         width:100%;
+         height:64px;
+         line-height:64px;
+         text-align:center;
+         background:#FFFFFF;
+         color:rgba(0, 0, 0, 0.4);
+         position:absolute;
+         left:0;
+         bottom:0px;
+
 
         }
-
-
-
-    }
-     @media screen and (max-width: 2560px) and (min-width: 1201px) {
-
-       .pg-body .menu-left{
-           width: 220px;
-
-        }
-
-       .pg-body .menu-right{
-
-
-       }
-
-     }
-
-
 
         {% block css %}{% endblock %}
     </style>
 </head>
 <body background="{% static 'imgs/background.png' %}" style="background-repeat:no-repeat;background-size:100% 100%; background-attachment: fixed;">
-
-
-<div class="pg-header">
-   <nav class="navbar navbar-inverse navbar-fixed-top" style="background: rgba(255, 255, 255, 1);width:100%">
-      <div class="navbar-header" style="background:#fff;">
+<div class="pg-header" style="height:64px" >
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background: rgba(255, 255, 255, 1);min-width:980px">
+      <div class="navbar-header" style="color:#000000;">
 
           <img class="logo" src="{% static 'imgs/zhuo.png' %}">
           <div class="TextName">
@@ -321,46 +253,78 @@
                   ShenZhen ChueKan New Technology Developments Co,.Ltd
               </div>
           </div>
+
+
+
       </div>
 
-       <div class="right-menu" >
-           <div class="user-info" >
+      <div class="right-menu" >
+            <div class="user-info" >
                 <a href="#" class="avatar" >
                     <img class="img-circle" src="{% static 'imgs/default.png' %}">
                 </a>
-               <div class="more-info" >
+                 <div class="more-info" >
                     <a href="#" class="more-item">个人信息</a>
                     <a href="/logout/" class="more-item">退出</a>
                 </div>
 
-           </div>
-       </div>
 
-
+            </div>
+        </div>
 </nav>
 </div>
 
+<div class="pg-body" style="width:100%;height:800px;padding-left:20px;padding-top:20px;" >
 
-<div class="pg-body"  >
+    <div class="menu-left" >
 
-        <div class="menu-left">
+        <ul class="menuul" >
 
-            <div class="newleft"></div>
+            <li role="presentation" class="active" style="color:rgba(255, 255, 255, 1);font-size:14px" >
+                <a class="defaulta" data-toggle="collapse" data-target="#list" href="#" >
+                  <span style="width:160px;display:inline-block;"> 业务管理</span>  <span class="caret" ></span>
+                </a>
+
+                 <ul id="list" class="collapse in menuStyle">
+                      <li  class=" active newlistyle" >
+                          <div class="newtree" >
+                              <img class="newimg" src="{% static 'imgs/rightarrow.png' %}" >
+                               <a href="/orders/" class="newitem">订单管理</a>
+                          </div>
+                      </li>
+                 </ul>
+
+            </li>
 
 
-        </div>
+            <li role="presentation" class="active" style="color:rgba(255, 255, 255, 1);font-size:14px" >
+                <a class="defaulta" data-toggle="collapse" data-target="#admins" href="#" >
+                 <span style="width:160px;display:inline-block;">管理员管理</span>   <span class="caret"></span>
+                </a>
 
-        <div class="menu-right" >
+                 <ul id="admins" class="collapse in menuStyle"  >
+                      <li  class=" active newlistyle" >
+                          <div class="newtree" >
+                              <img class="newimg" src="{% static 'imgs/rightarrow.png' %}" >
+                               <a href="/admin/list/" class="newitem">管理员列表</a>
+                          </div>
+                      </li>
+                 </ul>
 
-           <div class="newright"></div>
-        </div>
+            </li>
 
 
 
 
+        </ul>
+
+    </div>
+
+
+    <div class="menu-right"  >
 
          {% block content %} {% endblock %}
-
+    </div>
 
 
 
