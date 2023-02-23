@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>卓勤后台系统</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %} "/>
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %} "/>
+    <link rel="stylesheet" href="{% static 'css/commons.css' %} "/>
+    {% block importjs %}{% endblock %}
+    <style>
+       *{
+          margin: 0;
+          padding:0;
+       }
+
+        html{font-size:62.5%;}
+       body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem; position:relative;height: 100vh;}
+       .pg-header{
+         height:64px;
+         width:100%;
+
+       }
+        .pg-header .navbar .navbar-header{
+       width:570px;
+       height:64px;
+       padding-left:20px;
+       float:left;
+       overflow: visible;
+
+       }
+   .pg-header .navbar .navbar-header .logo{
+         height:52px;
+         width:52px;
+         line-height:52px;
+         float:left;
+         margin-top:5px;
+
+   }
+   .pg-header .navbar .navbar-header .TextName{
+        width:480px;
+
+        height:64px;
+
+        float:left;
+        margin-left:5px;
+
+       }
+
+    .pg-header .navbar .navbar-header  .TextName .topTitle{
+          height:48px;
+          font-size:24px;
+          line-height:51px;
+
+       }
+    .pg-header .navbar .navbar-header  .TextName .bottomTitle{
+          height:16px;
+          padding-left:18px;
+          font-size:12px;
+          margin-top:-5px;
+
+   }
+   .pg-header .navbar .right-menu{
+        width:272px;
+        height:48px;
+        float:right;
+        margin-top:5px;
+        margin-right:30px;
+
+
+   }
+   .pg-header .navbar .right-menu .right-menuli{
+     width:100%;
+     height:100%;
+
+     list-style:none;
+   }
+   .pg-header .navbar .right-menu .right-menuli .right-part{
+      width:48px;
+      height:100%;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 48px;
+      letter-spacing: 0em;
+      color:rgba(0, 0, 0, 1);
+
+      text-align:center;
+      margin-left:10px;
+      margin-right:10px;
+      float:left;
+      cursor:pointer;
+
+
+
+   }
+
+
+     /*媒体查询：注意and后面空格的添加*/
+    /*iphone: w < 768px*/
+    @media screen and (max-width: 768px){
+
+        .pg-header .navbar .navbar-header{
+           width:60%;
+           height:64px;
+           padding-left:20px;
+           float:left;
+           overflow: visible;
+        }
+        .pg-header .navbar .navbar-header .TextName{
+           width:77%;
+           height:64px;
+            float:left;
+            margin-left:5px;
+            font-size:14px;
+
+        }
+        .pg-header .navbar .navbar-header  .TextName .topTitle{
+          height:48px;
+          font-size:16px;
+          line-height:48px;
+
+       }
+        .pg-header .navbar .navbar-header  .TextName .bottomTitle{
+              height:16px;
+
+              font-size:8px;
+              margin-top:-5px;
+
+       }
+        .pg-header .navbar .right-menu{
+        width:178px;
+        margin-right:3px;
+
+         }
+         .pg-header .navbar .right-menu .right-menuli .right-part{
+             width:38px;
+              margin-left:3px;
+              margin-right:3px;
+              font-size:8px;
+
+         }
+
+
+
+
+
+    }
+    /*pad: w >= 768  && w< 992*/
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+       .pg-header .navbar .right-menu .right-menuli .right-part{
+<!--             width:38px;-->
+<!--             margin-left:3px;-->
+<!--      margin-right:3px;-->
+<!--             font-size:8px;-->
+
+         }
+
+    }
+    /*中等屏幕   w >= 992  && w<1200*/
+    @media screen and (max-width: 1200px) and (min-width: 992px) {
+
+
+
+
+    }
+     @media screen and (max-width: 2560px) and (min-width: 1201px) {
+
+
+
+     }
+
+
+
+
+    </style>
+    {% block css %}{% endblock %}
+</head>
+<body background="{% static 'imgs/bk2.png' %}" style="background-repeat:no-repeat;background-size:100% 100%; background-attachment: fixed;">
+
+
+<div class="pg-header" style="height:64px">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background: rgba(255, 255, 255, 1);width:100%">
+        <div class="navbar-header" style="color:#000000;">
+
+          <img class="logo" src="{% static 'imgs/zhuo.png' %}">
+          <div class="TextName">
+             <div class="topTitle">
+                 深圳市卓勤新技术发展有限公司
+             </div>
+              <div class="bottomTitle">
+
+                  ShenZhen ChueKan New Technology Developments Co,.Ltd
+              </div>
+          </div>
+      </div>
+        <div class="right-menu">
+            <ul class="right-menuli">
+                <li class="right-part">
+
+                    关于我们
+
+                </li>
+
+                <li class="right-part">
+
+                    服务案例
+
+                </li>
+
+                <li class="right-part">
+
+                    产品矩阵
+
+                </li>
+
+                <li class="right-part">
+
+                    加入我们
+
+                </li>
+
+            </ul>
+
+
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %} "></script>
+
+<script type="text/javascript">
+
+
+</script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.js' %} "></script>
+{% block js %} {% endblock %}
+
+</body>
+</html>
