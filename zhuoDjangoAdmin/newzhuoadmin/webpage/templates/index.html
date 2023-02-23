@@ -94,6 +94,29 @@
 
 
    }
+   .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev{
+   top:40%;
+}
+    .shuzi{
+
+        position:absolute;
+        left:50px;
+        bottom:50px;
+        height:67px;
+        width:240px;
+
+        text-align:center;
+        font-family: PingFang HK;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 67px;
+        letter-spacing: 0em;
+        color:#fff;
+        border-radius: nullpx;
+
+
+    }
+
 
 
      /*媒体查询：注意and后面空格的添加*/
@@ -101,9 +124,9 @@
     @media screen and (max-width: 768px){
 
         .pg-header .navbar .navbar-header{
-           width:60%;
+           width:64%;
            height:64px;
-           padding-left:20px;
+           padding-left:0px;
            float:left;
            overflow: visible;
         }
@@ -115,29 +138,46 @@
             font-size:14px;
 
         }
+
+
+
+
+        .pg-header .navbar .navbar-header .logo{
+          width:30px;
+          height:30px;
+        }
+
+
         .pg-header .navbar .navbar-header  .TextName .topTitle{
           height:48px;
-          font-size:16px;
+          font-size:14px;
           line-height:48px;
 
        }
         .pg-header .navbar .navbar-header  .TextName .bottomTitle{
               height:16px;
-
-              font-size:8px;
+              padding-left: 0px;
+              font-size:7px;
               margin-top:-5px;
 
        }
         .pg-header .navbar .right-menu{
-        width:178px;
+        width:137px;
         margin-right:3px;
 
          }
          .pg-header .navbar .right-menu .right-menuli .right-part{
-             width:38px;
-              margin-left:3px;
-              margin-right:3px;
+             width:32px;
+              margin-left:1px;
+              margin-right:1px;
               font-size:8px;
+
+         }
+         .shuzi{
+           left:20px;
+           bottom:20px;
+           font-size:16px;
+           width:180px;
 
          }
 
@@ -148,11 +188,25 @@
     }
     /*pad: w >= 768  && w< 992*/
     @media screen and (max-width: 992px) and (min-width: 768px) {
+    .pg-header .navbar .navbar-header {
+      width: 537px;
+      padding-left:0px;
+    }
+    .pg-header .navbar .navbar-header .logo {
+    height: 40px;
+    width: 40px;
+
+    }
+
+    .pg-header .navbar .right-menu {
+    width: 231px;
+    margin-right: 0px;
+    }
+
+
        .pg-header .navbar .right-menu .right-menuli .right-part{
-<!--             width:38px;-->
-<!--             margin-left:3px;-->
-<!--      margin-right:3px;-->
-<!--             font-size:8px;-->
+           margin-left: 3px;
+          margin-right: 3px;
 
          }
 
@@ -176,7 +230,7 @@
     </style>
     {% block css %}{% endblock %}
 </head>
-<body background="{% static 'imgs/bk2.png' %}" style="background-repeat:no-repeat;background-size:100% 100%; background-attachment: fixed;">
+<body>
 
 
 <div class="pg-header" style="height:64px">
@@ -225,6 +279,40 @@
 
         </div>
     </nav>
+</div>
+<div class="pg-body" style="height:700px;width:100%;">
+
+
+  <div class="bs-example" data-example-id="simple-carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox" style="position:relative">
+        <div class="item active" style="width:100%">
+          <img  src="{% static 'imgs/bk4.png' %}" data-holder-rendered="true" style="width:100%">
+<!--               <div class="newproduct">-->
+<!--                   <div class="newproductnext">全新公司产品-->
+<!--                      现已发布</div>-->
+<!--                   <div>了解更多</div>-->
+
+<!--               </div>-->
+<!--          <div style="position:absolute;left:0;top:0">22222</div>-->
+        </div>
+        <div class="item" style="width:100%">
+          <img  src="{% static 'imgs/bk5.png' %}" data-holder-rendered="true" style="width:100%">
+
+<!--            <div class="shuzi">企业数字化转型案例</div>-->
+
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" >
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 
