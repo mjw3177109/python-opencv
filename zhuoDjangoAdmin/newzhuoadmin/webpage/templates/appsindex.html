@@ -118,12 +118,17 @@
  }
 
 
+
 {% endblock %}
 
 
 {% block content %}
 
-  <div class="contentTable" style="width:100%;height:100%;background: rgba(255, 255, 255, 1);border-radius: 5px;overflow:hidden">
+  <div class="contentTable" style="width:100%;height:100%;background: rgba(255, 255, 255, 1);border-radius: 5px;overflow:hidden;">
+
+
+
+
 
 
     <div class="newTable">
@@ -135,7 +140,7 @@
            </div>
 
            <div class="urlText">
-                <input type="text" class="form-control" placeholder="请输入音乐链接url" value="{{music_url}}">
+                <input type="text" class="form-control" id="musicsId" placeholder="请输入音乐链接url" value="{{music_url}}">
            </div>
 
        </div>
@@ -143,13 +148,8 @@
 
             <div class="appText">
                 <div class="titleContent">每日一言</div>
-                <div class="contentArticle">
+                <div class="contentArticle" id="changeArticle">
                     {{contents}}
-
-<!--                    <rich-text nodes="<h1>你好!中国</h1>"></rich-text>-->
-
-<!--                   <div>菩提本无树</div>-->
-<!--                   <div>明镜亦非台</div>-->
 
                 </div>
 
@@ -163,10 +163,10 @@
 
         <div class="button_left">
 
-            <button class="btn btn-primary" style="width:100px;height:50px;">预览</button>
+            <button class="btn btn-primary" style="width:100px;height:50px;" onclick="previewShow()">预览</button>
         </div>
         <div class="button_right">
-             <button class="btn btn-success" style="width:100px;height:50px;">发布</button>
+             <button class="btn btn-success" style="width:100px;height:50px;"  onclick="pushNewData()">发布</button>
         </div>
     </div>
 
@@ -178,15 +178,68 @@
 {% block js %}
 <script  src="{% static 'plugins/tinymce/tinymce.min.js' %} "></script>
     <script>
+    window.onload = function(){
+     initTiny()
+    }
+
+    function initTiny(){
+          var tinyID='tinydemo';
      tinymce.init({
-       'selector': '#tinydemo',
+       'selector': '#'+tinyID,
        'language':'zh-Hans',
        'promotion':false,
 
        'width':100+"%",
        'height':300,
        'statusbar': false,
-    })</script>
+    })
+
+
+    }
+
+
+
+
+</script>
+<script type="text/javascript">
+
+      function previewShow(){
+
+      var cnt = tinymce.activeEditor.getContent();
+<!--      console.log(cnt,typeof(cnt));-->
+      var mData =document.getElementById("changeArticle")
+      mData.innerHTML=cnt
+
+<!--      console.log(mData.innerHTML,"new")-->
+
+    }
+    function pushNewData(){
+      $.ajax({
+             url:"/updateIndex/",
+             type:"post",
+             data:{
+             "quote":tinymce.activeEditor.getContent(),
+             "music_url":document.getElementById("musicsId").value,
+             },
+             dataType:"JSON",
+             success:function(res){
+               if(res.status==200){
+
+                  alert("success")
+                  location.reload();
+
+               }else{
+                 alert("failed")
+               }
+             },
+
+             })
+
+
+
+     console.log("444")
+    }
+</script>
 
 
 {% endblock %}
