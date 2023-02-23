@@ -178,8 +178,9 @@
 {% block js %}
 <script  src="{% static 'plugins/tinymce/tinymce.min.js' %} "></script>
     <script>
+    initTiny();
     window.onload = function(){
-     initTiny()
+
     }
 
     function initTiny(){
