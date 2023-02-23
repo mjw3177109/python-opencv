@@ -148,7 +148,15 @@ name: "Order",
 
 
         }else if(res.status === 987){
-          this.$message.error("未登录或登录过期,请返回登录页面");
+          // this.$message.error("未登录或登录过期,请返回登录页面");
+          let users =localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")):{};
+          if (users === {}){
+
+
+          }else{
+            localStorage.removeItem("user")
+          }
+          this.$router.push("/login/")
 
         }
 

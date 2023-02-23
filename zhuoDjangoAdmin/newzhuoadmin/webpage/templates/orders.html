@@ -19,6 +19,22 @@
 
    }
 
+ .popover{
+
+   background: rgba(66, 145, 118, 1);
+   color:rgba(0, 0, 0, 1);
+   border-radius:10px;
+   width:200px;
+   height:200px;
+   font-size:14px;
+   z-index: 1060;
+   }
+   .popover .arrow{
+    display:none;
+   }
+
+
+
 {% endblock %}
 
 
@@ -48,7 +64,7 @@
               <td>{{obj.State}}</td>
               <td>{{obj.Money}}</td>
               <td>{{obj.Name}}</td>
-              <td><a style="color:rgba(87, 188, 154, 1);">{{obj.Business}}</a></td>
+              <td><a style="color:rgba(87, 188, 154, 1);"  href="#" title="" data-toggle="popover" data-trigger="hover" data-content="购买产品：{{obj.Business}}</br>产品类别：{{obj.Subdivision}}</br>服务对象：{{obj.Name}}</br>服务地址：{{obj.Address}}</br>开始时间：{{obj.Start_time|date:'Y-m-d'}}</br>结束时间：{{obj.End_time|date:'Y-m-d'}}</br>" data-placement="bottom" data-html="true">{{obj.Business}}</a></td>
               <td>{{obj.create_time |date:"Y-m-d"}}</td>
               <td>{{obj.update_time |date:"Y-m-d"}}</td>
                 <td>
@@ -67,5 +83,14 @@
 
   </div>
 
+
+{% endblock %}
+
+{% block js %}
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 
 {% endblock %}

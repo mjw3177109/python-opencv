@@ -37,7 +37,14 @@ export default {
     },
   methods:{
     logout(){
-      localStorage.removeItem("user")
+
+      let users =localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")):{};
+      if (users === {}){
+
+
+      }else{
+        localStorage.removeItem("user")
+      }
       this.$router.push("/login/")
       this.$message.success("退出成功");
     },

@@ -1,11 +1,6 @@
 
 import sys
 
-
-
-
-
-
 for line in sys.stdin:
     words= line.strip()
     try:

@@ -30,9 +30,79 @@ class Node:
 ####
 
 class Tree:
-    def __iter__(self):
+    def __init__(self):
         self.root=None
         self.size=0
 
+    def append_data(self,value,parent=None):
+        if parent ==None:
+           self.root =Node(value)
+           return
+        else:
+
+            data =Node(value)
+            cur =self.root
+            if self.root.value ==parent:
+                cur.children.append(data)
+                data.parent=cur
+            else:
+                if cur.children!=[]:
+                    self.find_data(cur.children,data,parent)
+
+    def find_data(self,nodes,item,parent):
+        if nodes!=[]:
+            for data in nodes:
+                if data.value == parent:
+                    item.parent = data
+                    data.children.append(item)
+
+                    return
+                if data.children!=[]:
+                    self.find_data(data)
+
+    def prints(self):
+        cur =self.root
+        if cur.children==[]:
+            print(cur.value)
+            return
+        else:
+            tips ="-"
+            print(cur.value,tips)
+            self.print_data(cur.children,tips)
+
+    def print_data(self,nodes,tips):
+        if nodes!=[]:
+            tips = tips + "-"
+            for data in nodes:
+
+                print(data.value,tips)
+                if data.children!=[]:
+                    self.print_data(data.children,tips)
+
+
+
+
+
+
+##测试
+
+tree =Tree()
+
+tree.append_data("1")
+# tree.prints()
+tree.append_data("2","1")
+tree.append_data("3","1")
+tree.prints()
+tree.append_data("4","3")
+tree.prints()
+
+"""
+
+1 -
+2 --
+3 --
+4 ---
+
+"""
 
 

@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %} "/>
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %} "/>
     <link rel="stylesheet" href="{% static 'css/commons.css' %} "/>
+    {% block importjs %}{% endblock %}
+
 <!--    <link rel="stylesheet" href="{% static 'css/nav.css' %} "/>-->
     <style>
        *{
@@ -178,8 +181,6 @@
        height:64px;
        padding-left:20px;
        float:left;
-
-
        overflow: visible;
 
        }
@@ -508,6 +509,24 @@
                         </ul>
 
                     </li>
+
+
+
+                     <li role="presentation" class="active lidata" >
+
+                        <a class="defaulta" data-toggle="collapse" data-target="#apps" href="#" >
+
+                              <span class="defaults"> 首页管理</span> <span class="caret" ></span>
+                        </a>
+                        <ul id="apps" class="collapse in menuStyle">
+                            <li  class=" active newlistyle" >
+                                <img class="newimg" src="{% static 'imgs/rightarrow.png' %}" >
+                                <a href="/appIndex/" class="newitem">app首页</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
 
                 </ul>
 
