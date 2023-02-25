@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>卓勤后台系统</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.css' %} "/>
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %} "/>
+    <link rel="stylesheet" href="{% static 'css/commons.css' %} "/>
+    {% block importjs %}{% endblock %}
+    <style>
+       *{
+          margin: 0;
+          padding:0;
+       }
+
+        html{}
+       body { font-size:1.4rem; position:relative;width:100%;height:100%;background: #1E1E1E;}
+
+
+        .navbar-nav li{
+        padding-top:1px;
+        }
+
+       .navbar-nav li a{
+
+         color:rgba(255, 255, 255, 1);
+         font-size:16px;
+
+       }
+        .navbar-nav li a:hover{
+        background:none;
+        }
+        .navbar-nav li a:focus{
+        background:none;
+        }
+
+
+
+
+     /*媒体查询：注意and后面空格的添加*/
+    /*iphone: w < 768px*/
+    @media screen and (max-width: 768px){
+     .pg-body div .img-fluid{
+      width:742px;
+     }
+
+
+    .newp{
+     display:none;
+    }
+
+
+
+
+
+
+    }
+    /*pad: w >= 768  && w< 992*/
+    @media screen and (max-width: 992px) and (min-width: 768px) {
+
+      .newp{
+       text-align:center;
+      }
+     }
+    /*中等屏幕   w >= 992  && w<1200*/
+    @media screen and (max-width: 1200px) and (min-width: 992px) {
+
+    .newp{
+       text-align:center;
+      }
+
+
+
+    }
+     @media screen and (max-width: 2560px) and (min-width: 1201px) {
+
+     .newp{
+       text-align:center;
+      }
+
+     }
+
+
+
+
+    </style>
+    {% block css %}{% endblock %}
+</head>
+<body>
+
+
+<nav class='navbar  navbar-fixed-top' style="background-color: transparent !important;padding:15px">
+        <div class='container-fluid' style="background: rgba(40, 154, 116, 0.2);border-radius:5px;margin-top:10px;height:60px;" >
+            <div class='navbar-header'>
+                <button class='navbar-toggle' type='button' data-toggle='collapse' data-target='#collapse' style="margin-top: 12px;background-color:rgba(40, 154, 116, 0.2);">
+                    <span class='sr-only'>切换导航栏</span>
+                    <span class='icon-bar' style="background:#fff"></span>
+                    <span class='icon-bar' style="background:#fff"></span>
+                    <span class='icon-bar' style="background:#fff"></span>
+                </button>
+                <a class='navbar-brand' href='#toppage' style="padding:0px;padding-left:4px;height:60px;margin-left:0px;padding-top:9px">
+
+                    <img alt="logo" src="{% static 'imgs/logonext.png' %}" style="width:40px;height:40px;">
+
+                </a>
+                <a class="navbar-brand" style="padding:0px;padding-left:9px;height:60px;margin-left:0px;padding-top:9px">
+                    <img alt="textname" src="{% static 'imgs/textbk.png' %}"  style="height:40px;">
+                </a>
+            </div>
+            <div id='collapse' class='collapse navbar-collapse' >
+                <ul class='nav navbar-nav navbar-right' style="margin-right:0px">
+                   <li><a href='#' >关于我们
+                      <p   class="newp"  style="color:background: rgba(255, 255, 255, 1);font-size:9px;font-weight:200;">About US</p>
+                   </a>
+
+                   </li>
+                   <li><a href='#'>服务案例
+                                  <p class="newp"  style="color:background: rgba(255, 255, 255, 1);font-size:9px;font-weight:200;">Service Case</p>
+                   </a></li>
+                    <li><a href='#'>产品矩阵
+                                   <p class="newp"  style="color:background: rgba(255, 255, 255, 1);font-size:9px;font-weight:200;">Product matrix</p>
+
+                    </a></li>
+                     <li><a href='#'>加入我们
+                                    <p  class="newp" style="color:background: rgba(255, 255, 255, 1);font-size:9px;font-weight:200;">Join us</p>
+                     </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="pg-body" style="width:100%;height:100%;">
+
+
+     <div style="width:100%;height:auto;">
+          <img  class="img-fluid" src="{% static 'imgs/baN1.png' %}" >
+     </div>
+
+    <div style="width:100%;height:auto">
+          <img  class="img-fluid" src="{% static 'imgs/bkN2.png' %}" >
+     </div>
+
+    <div style="width:100%;height:auto">
+          <img  class="img-fluid" src="{% static 'imgs/bkN3.png' %}" >
+     </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %} "></script>
+
+<script type="text/javascript">
+
+
+</script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.js' %} "></script>
+{% block js %} {% endblock %}
+
+</body>
+</html>
