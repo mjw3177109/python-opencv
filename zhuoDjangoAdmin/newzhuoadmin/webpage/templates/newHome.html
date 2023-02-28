@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} " />
+    <link rel="stylesheet" href="{% static 'plugins/libs/glide/glide.core.min.css' %} " />
+    <link rel="stylesheet" href="{% static 'plugins/libs/glide/glide.theme.min.css' %} " />
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %} "/>
+    <title>深圳市卓勤新技术发展有限公司</title>
+
+    <style>
+        .glide .glide__track  .glide__slides .glide__slide .slide-caption{
+          position:absolute;
+          z-index:70;
+          color:#e7e9ec;
+          text-align:center;
+          max-width:60vw;
+        }
+        .glide .glide__track  .glide__slides .glide__slide .slide-caption.left{
+           max-width:80vw;
+           text-align:left;
+
+        }
+
+        .glide .glide__track  .glide__slides .glide__slide .slide-caption > *{
+
+         opacity:0;
+        }
+
+
+        .glide .glide__track  .glide__slides .glide__slide .slide-caption h1{
+           font-size:54px;
+           font-weight:600;
+        }
+        .glide .glide__track  .glide__slides .glide__slide .slide-caption h3{
+           font-size:24px;
+           margin:40px 0;
+        }
+        .glide .glide__track  .glide__slides .glide__slide .slide-caption .explore-btn{
+          padding:14px 32px;
+          background-color:#ff434f;
+          border:0;
+          border-radius:4px;
+          color:#e7e9ec;
+          cursor:pointer;
+          font-size:18px;
+          outline:none;
+
+        }
+
+        .glide .glide__track  .glide__slides .glide__slide .backdrop{
+         background:rgba(42,42,42,0.69);
+         z-index:60;
+         position:absolute;
+         width:100%;
+         height:100%;
+         left:0;
+         top:0;
+         opacity:0.5;
+        }
+
+        .glide .glide__track  .glide__slides .glide__slide{
+
+         display:flex;
+         align-items:center;
+         justify-content:center;
+        }
+
+
+    </style>
+</head>
+<body>
+   <header>
+
+       <div class="logo">
+           <div>深圳市卓勤新技术发展有限公司</div>
+
+       </div>
+       <nav>
+           <a href="#">关于我们</a>
+           <a href="#">服务案例</a>
+           <a href="#">产品矩阵</a>
+           <a href="#">加入我们</a>
+       </nav>
+       <div class="burger">
+           <div class="burger-line1"></div>
+           <div class="burger-line2"></div>
+           <div class="burger-line3"></div>
+       </div>
+   </header>
+   <div class="glide" style="top:-80px;z-index:50;">
+       <div class="glide__track" data-glide-el="track">
+           <div class="glide__slides">
+               <div class="glide__slide">
+                   <div class="slide-caption">
+                       <h1>用创意点缀人生，让科技融入理想。</h1>
+                       <h3>科技创新大平台，智慧生活新引擎。依靠科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想。</h3>
+                       <button class="explore-btn">探索更多</button>
+                   </div>
+                   <div class="backdrop"></div>
+                   <img src="{% static 'images/people-in-couch-1024248.jpg'%}" style="width:100vw;height:100vh;object-fit:cover;">
+               </div>
+               <div class="glide__slide">
+                   <div class="slide-caption left">
+                       <h1>科技改变世界。</h1>
+                       <h3>立足科学发展，着力自主创新。加速科技进步，为全市经济社会发展提供有力支撑。凝聚科技创意，成就创新梦想。</h3>
+                       <button class="explore-btn">探索更多</button>
+
+                   </div>
+                    <div class="backdrop"></div>
+                    <video src="{% static 'videos/working-man.mp4'%}" muted autoplay loop style="width:100vw;height:100vh;object-fit:cover;"></video>
+               </div>
+
+
+           </div>
+       </div>
+
+       <div class="glide__arrows" data-glide-el="controls">
+
+           <button class="glide__arrow glide__arrow--left" data-glide-dir="<" ><</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">" >
+             >
+            </button>
+       </div>
+
+       <div class="glide__bullets" data-glide-el="controls[nav]">
+
+           <button class="glide__bullet" data-glide-dir="=0" ></button>
+           <button class="glide__bullet" data-glide-dir="=1" ></button>
+       </div>
+
+   </div>
+  <script src="{% static 'plugins/libs/anime/anime.min.js' %}"></script>
+  <script src="{% static 'plugins/libs/glide/glide.min.js' %}"></script>
+  <script src="{% static 'js/index.js' %} "></script>
+
+</body>
+</html>
