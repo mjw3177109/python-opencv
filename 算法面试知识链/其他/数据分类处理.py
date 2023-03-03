@@ -92,3 +92,19 @@ I整数对应的数字需要连续包含R<i>对应的数字。比如R<i>为23，
 
 """
 
+I = input().split()[1:]
+R = input().split()[1:]
+R = sorted(set(R), key=lambda x: int(x))
+res = []
+for i in range(len(R)):
+    ans = []
+    for j in range(len(I)):
+        if R[i] in I[j]:
+            ans.append(str(j))
+            ans.append(I[j])
+    if ans:
+        res.append(R[i])
+        res.append(str(len(ans) // 2))
+        res += ans
+
+print(str(len(res)) + ' ' + ' '.join(res))
